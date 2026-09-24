@@ -28,7 +28,7 @@ jobs:
       push: ${{ github.event_name != 'pull_request' }}
       platforms: linux/amd64,linux/arm64
       # meta-images: name/app
-      meta-images: ghcr.io/goldiblock/docker-build-attestations
+      meta-images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
       meta-tags: |
         type=ref,event=branch
         type=ref,event=pr
